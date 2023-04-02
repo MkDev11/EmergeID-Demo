@@ -1,0 +1,8 @@
+Flask==2.1.1
+Flask-Cors==3.0.10
+requests==2.26.0
+Flask-SQLAlchemy==2.5.1
+boto3==1.20.24
+web3==5.25.0
+pydid>=0.3.7,<0.4.0
+git+https://github.com/sicpa-dlab/didcomm-python.git
