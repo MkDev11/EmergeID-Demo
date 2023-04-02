@@ -17,9 +17,9 @@ db.init_app(app)
 
 @app.route('/')
 def index():
-    return redirect('/authorize')
+    return redirect('/api/authorize')
 
-@app.route('/register', methods=['POST'])
+@app.route('/api/register', methods=['POST'])
 def register():
     idme_id = request.form.get('idme_id')
     did = request.form.get('did')
@@ -37,7 +37,7 @@ def register():
 
     return jsonify({'message': 'User registered', 'user_id': user.id})
 
-@app.route('/authorize')
+@app.route('/api/authorize')
 def idme_authorize():
     query_params = {
         'client_id': Config.IDME_CLIENT_ID,
@@ -48,7 +48,7 @@ def idme_authorize():
     url = f"{Config.IDME_AUTH_URL}?{urlencode(query_params)}"
     return redirect(url)
 
-@app.route('/callback')
+@app.route('/api/callback')
 def idme_callback():
     code = request.args.get('code')
     if not code:
@@ -88,4 +88,4 @@ def idme_get_userinfo(access_token):
     return response.json()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
