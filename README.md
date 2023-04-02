@@ -1,4 +1,4 @@
-# Emerge-ID LVP Demo App
+# EmergID LVP Demo App
 
 Emerge-ID LVP is a demo app showcasing a simple identity verification process using ZeroDev SDK for wallet creation, social sign-on, Id.me authentication, and image upload.
 
